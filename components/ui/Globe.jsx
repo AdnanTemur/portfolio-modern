@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three"
 import ThreeGlobe from "three-globe"
-import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber"
+import { useThree, Canvas, extend } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import countries from "@/data/globe.json"
 
@@ -40,7 +40,6 @@ export function Globe({ globeConfig, data }) {
       _buildData()
       _buildMaterial()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current])
 
   const _buildMaterial = () => {
@@ -134,7 +133,6 @@ export function Globe({ globeConfig, data }) {
           })
       startAnimation()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData])
 
   const startAnimation = () => {
@@ -155,7 +153,6 @@ export function Globe({ globeConfig, data }) {
         .arcStartLng(d => (d).startLng)
         .arcEndLat(d => (d).endLat)
         .arcEndLng(d => (d).endLng)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .arcColor((e) => (e).color)
         .arcAltitude(e => {
           return (e).arcAlt
@@ -170,7 +167,6 @@ export function Globe({ globeConfig, data }) {
 
     globeRef.current
         .ringsData([])
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .ringColor((e) => (t) => e.color(t))
         .ringMaxRadius(defaultProps.maxRings)
         .ringPropagationSpeed(RING_PROPAGATION_SPEED)
@@ -198,7 +194,6 @@ export function Globe({ globeConfig, data }) {
     return () => {
       clearInterval(interval)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current, globeData])
 
   return (
@@ -215,7 +210,6 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio)
     gl.setSize(size.width, size.height)
     gl.setClearColor(0xffaaff, 0)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return null
