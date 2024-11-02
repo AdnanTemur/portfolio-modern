@@ -38,7 +38,7 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
           <p className="mb-4 text-center text-sm md:text-lg lg:text-2xl md:tracking-wider">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
+            Hi! I&apos;m John Doe, a Next.js & ReactJS Developer.
           </p>
           <div className="flex justify-center">
             <a href="#projects">
